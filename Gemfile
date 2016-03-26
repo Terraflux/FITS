@@ -21,10 +21,15 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 #use postgres for ActiveRecord
-gem 'pg'
+gem 'pg', '~> 0.18.2'
 
-#use sqlite3 because aws is shitty
+# rails_12factor for proper heroku initialization
+gem 'rails_12factor'
+
+#use sqlite3 because aws is shitty (or not)
 # gem 'sqlite3'
+
+
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 gem 'font-awesome-rails'
@@ -33,6 +38,11 @@ gem 'backbone-on-rails'
 # bootstrap-sass
 gem 'bootstrap-sass', '~> 3.3.5'
 gem "non-stupid-digest-assets"
+
+# specifies ruby version to heroku through DSL
+
+ruby "2.2.0"
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
