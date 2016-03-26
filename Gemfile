@@ -26,6 +26,13 @@ gem 'pg', '~> 0.18.2'
 # rails_12factor for proper heroku initialization
 gem 'rails_12factor'
 
+# puma server instead of built in WEBRICK because heroku says so
+gem 'puma'
+
+# times out long server requests
+gem "rack-timeout"
+
+
 #use sqlite3 because aws is shitty (or not)
 # gem 'sqlite3'
 
@@ -41,7 +48,7 @@ gem "non-stupid-digest-assets"
 
 # specifies ruby version to heroku through DSL
 
-ruby "2.2.0"
+ruby "2.1.2"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
